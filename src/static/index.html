@@ -21,6 +21,10 @@
             <span class="user-icon">👤</span>
             <span>Login</span>
           </button>
+            <button id="manage-announcements-button" class="icon-button hidden">
+              <span>📢</span>
+              <span>Manage Announcements</span>
+            </button>
           <div id="user-info" class="hidden">
             <span id="display-name"></span>
             <button id="logout-button">Logout</button>
@@ -135,8 +139,40 @@
     </div>
 
     <script src="app.js"></script>
-    <div class="announcement-banner">
-      📢 Activity registration is open until the end of the month. Don't lose your spot!
+    <!-- Announcements will be injected here -->
+    <div id="announcements-container"></div>
+
+    <!-- Announcements Management Modal (for signed-in users) -->
+    <div id="announcements-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-announcements-modal">&times;</span>
+        <h3>Announcements</h3>
+        <div id="announcements-list">
+          <p>Loading announcements...</p>
+        </div>
+
+        <hr />
+        <h4>Create / Edit Announcement</h4>
+        <form id="announcement-form">
+          <input type="hidden" id="announcement-id" />
+          <div class="form-group">
+            <label for="announcement-message">Message</label>
+            <textarea id="announcement-message" required rows="3" placeholder="Write announcement message..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="announcement-start">Start date (optional)</label>
+            <input type="datetime-local" id="announcement-start" />
+          </div>
+          <div class="form-group">
+            <label for="announcement-expiration">Expiration date (required)</label>
+            <input type="datetime-local" id="announcement-expiration" required />
+          </div>
+          <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:10px;">
+            <button type="button" id="announcement-cancel">Cancel</button>
+            <button type="submit" id="announcement-save">Save</button>
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>

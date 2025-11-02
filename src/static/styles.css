@@ -672,3 +672,28 @@ footer {
   padding: 15px;
   font-weight: bold;
 }
+
+/* Announcements management UI */
+.announcement-item {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.announcement-message {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.announcement-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Make announcement banner stand out with subtle gradient */
+.announcement-banner {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(37, 96, 41, 0.18);
+  background: linear-gradient(90deg, #2e7d32, #256029);
+  margin: 12px 0;
+}
